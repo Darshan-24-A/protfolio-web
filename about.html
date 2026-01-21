@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Story Behind You — About</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-about">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">My Protofolio </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link current">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="achievements.html" class="nav-link">Achievements</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content container">
+  
+      <section class="about-top">
+  <div class="centered-content">
+    <h1>My Story</h1>
+    <p>
+My journey into technology began with curiosity about how
+ websites and applications work. What started as simple experiments 
+ with code slowly turned into a passion for development and problem-solving.
+I enjoy working with HTML, CSS, JavaScript, C, and C++ and learning how to design
+ and build user-friendly experiences. Outside of coding, I enjoy creative thinking and exploring new ideas that inspire my projects
+    </p>
+    <p>
+      I enjoy tackling hard problems and learning new technologies. Outside of code,
+      I love photography etc
+    </p>
+  </div>
+</section>
+
+
+    <hr class="spacious-separator" role="separator">
+
+    <section class="skills-section" aria-label="Skills">
+      <h2>Skills</h2>
+      <div class="skills-grid" role="list">
+        <div class="skill-tile">HTML</div>
+        <div class="skill-tile">CSS</div>
+       <div class="skill-tile">C++</div>
+       <div class="skill-tile">c</div>
+       <div class="skill-tile">JavaScript</div>
+       <div class="skill-tile">Java</div>
+        
+        
+    
+      
+      
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year2"></span> Transforming ideas into impactful solutions</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year2').textContent = new Date().getFullYear();
+    function updateHeaderHeight() {
+      const header = document.querySelector('.site-header');
+      document.documentElement.style.setProperty('--header-height', header.offsetHeight + 'px');
+    }
+    window.addEventListener('load', updateHeaderHeight);
+    window.addEventListener('resize', updateHeaderHeight);
+  </script>
+</body>
+</html>

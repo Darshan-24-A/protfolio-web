@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Explorer's Base — Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-home">
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <div class="logo">My Protofolio </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link current">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="achievements.html" class="nav-link">Achievements</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Hi I'm Darshan A</h1>
+        <p class="lead">
+        i am currently pursuing my BE in Information Science and Engineering at Sahyadri college of Engineering and Management.I am passionate about coding ,problem solving and learning new technologies.
+        </p>
+        <div class="hero-actions">
+          <a href="projects.html" class="btn btn-primary" id="exploreBtn">Explore My Work</a>
+          <a href="about.html" class="btn btn-ghost">Learn More</a>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+          <img src="p.jpeg" alt="Hero image" class="hero-image">
+        </div>
+    </section>
+
+    
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Crafting digital experiences with passion and innovation</small>
+    </div>
+  </footer>
+
+  <script>
+    // Keep CSS variable --header-height updated so main content starts below fixed header
+    function updateHeaderHeight() {
+      const header = document.getElementById('siteHeader');
+      document.documentElement.style.setProperty('--header-height', header.offsetHeight + 'px');
+    }
+    window.addEventListener('load', updateHeaderHeight);
+    window.addEventListener('resize', updateHeaderHeight);
+
+    // keyboard UX for explore button
+    document.getElementById('exploreBtn').addEventListener('keydown', e => {
+      if (e.key === 'Enter') location.href = 'projects.html';
+    });
+
+    // footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

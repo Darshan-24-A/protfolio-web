@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Lab of Creations — Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-projects">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">My Protofolio </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link current">Projects</a>
+        <a href="achievements.html" class="nav-link">Achievements</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content container">
+    <section class="projects-grid-section">
+      <h1>My projects</h1>
+      <div class="projects-grid">
+        <article class="project-card" onclick="openProjectModal('Todo Application', 'A fully functional task management application built with HTML, CSS, and JavaScript. Features include adding tasks, marking them as complete, deleting tasks, and persistent local storage. Perfect for organizing your daily activities and boosting productivity.', '✓')">
+          <img src="tudo.png" alt="Todo Application" class="project-card-image">
+          <div class="project-card-body">
+            <h3>Todo Application</h3>
+            <a href="#" class="project-link" onclick="return false;">View Project →</a>
+          </div>
+        </article>
+
+        <article class="project-card" onclick="openProjectModal('Polynomial Calculator', 'A specialized calculator for performing polynomial operations including addition, subtraction, multiplication, and evaluation. Built with C for fast computation and accuracy. Handles complex polynomial expressions with ease.', '∑')">
+          <img src="polynomial.png" alt="Polynomial Calculator" class="project-card-image">
+          <div class="project-card-body">
+            <h3>Polynomial Calculator</h3>
+            <a href="#" class="project-link" onclick="return false;">View Project →</a>
+          </div>
+        </article>
+
+        <article class="project-card" onclick="openProjectModal('Tourism Website', 'A beautiful and responsive tourism website showcasing travel destinations, tour packages, booking functionality, and tourist reviews. Built with HTML, CSS, and JavaScript for seamless user experience. Explore beautiful destinations worldwide.', '✈️')">
+          <img src="tourism.png" alt="Tourism Website" class="project-card-image">
+          <div class="project-card-body">
+            <h3>Tourism Website</h3>
+            <a href="#" class="project-link" onclick="return false;">View Project →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="" alt="Coming Soon" class="project-card-image">
+          <div class="project-card-body">
+            <h3>Coming Soon</h3>
+            <a href="#" class="project-link" onclick="return false;">View Project →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="" alt="Coming Soon" class="project-card-image">
+          <div class="project-card-body">
+            <h3>Coming Soon</h3>
+            <a href="#" class="project-link" onclick="return false;">View Project →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="" alt="Coming Soon" class="project-card-image">
+          <div class="project-card-body">
+            <h3>Coming Soon</h3>
+            <a href="#" class="project-link" onclick="return false;">View Project →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="" alt="Coming Soon" class="project-card-image">
+          <div class="project-card-body">
+            <h3>Coming Soon</h3>
+            <a href="#" class="project-link" onclick="return false;">View Project →</a>
+          </div>
+        </article>
+
+        <!-- Add more project-card blocks as needed -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Project Modal -->
+  <div id="projectModal" class="modal" onclick="closeProjectModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeProjectModal()">&times;</span>
+      <div class="modal-icon" id="modalIcon"></div>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+      <button class="modal-close-btn" onclick="closeProjectModal()">Close</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year3"></span> Building tomorrow's technology today</small>
+    </div>
+  </footer>
+
+  <script>
+    function openProjectModal(title, description, icon) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalDescription').textContent = description;
+      document.getElementById('modalIcon').textContent = icon;
+      document.getElementById('projectModal').style.display = 'flex';
+    }
+
+    function closeProjectModal(event) {
+      // If clicking on the background, close it
+      if (event && event.target.id !== 'projectModal') return;
+      document.getElementById('projectModal').style.display = 'none';
+    }
+
+    // Close modal when pressing Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeProjectModal();
+      }
+    });
+
+    document.getElementById('year3').textContent = new Date().getFullYear();
+    function updateHeaderHeight() {
+      const header = document.querySelector('.site-header');
+      document.documentElement.style.setProperty('--header-height', header.offsetHeight + 'px');
+    }
+    window.addEventListener('load', updateHeaderHeight);
+    window.addEventListener('resize', updateHeaderHeight);
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Milestones Gallery — Achievements</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-achievements">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">My Protofolio </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="achievements.html" class="nav-link current">Achievements</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content container">
+    <section class="achievements-stack">
+      <h1>My Achievements</h1>
+
+      <div class="achievement-card">
+        <div class="achievement-accent" aria-hidden="true"></div>
+        <div class="achievement-content">
+          <h3>🏆 Hackathon</h3>
+          <p><ol>
+            <li>We are successfully selected in the Internal Smart India Hackathon</li>
+            <li>participated in Smart India Hackathon 2025</li>
+            <li>participated in socia Spark event</li>
+          </ol></p>
+        </div>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-accent" aria-hidden="true"></div>
+        <div class="achievement-content">
+          <h3>📜 Certification</h3>
+          <p><ol>
+            <li>CySeck - 2-Day Cybersecurity Bootcamp and CTF Competition (October 30-31, 2025) at NITK Surathkal, Mangaluru - K-Tech CoE for Cyber Security</li>
+            <li>Microsoft AI Learning Challenge</li>
+            <li>Rapid Prototyping Workshop</li>
+            <li>Figma UI/UX Design Essentials</li>
+          </ol></p>
+        </div>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-accent" aria-hidden="true"></div>
+        <div class="achievement-content">
+          <h3>🎓 Academic Excellence</h3>
+          <p><ol>
+            <li>Achieved a CGPA of 9.6 in the 1st year BE course</li>
+            <li>Consistent academic performance and high GPA</li>
+            
+          </ol></p>
+          <p style="font-style: italic; color: #6b7280; margin-top: 12px;">"Success is not final, failure is not fatal. It is the courage to continue that counts." — Excellence through dedication and hard work.</p>
+        </div>
+      </div>
+
+     
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year4"></span> Celebrating every milestone in the journey of growth</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year4').textContent = new Date().getFullYear();
+    function updateHeaderHeight() {
+      const header = document.querySelector('.site-header');
+      document.documentElement.style.setProperty('--header-height', header.offsetHeight + 'px');
+    }
+    window.addEventListener('load', updateHeaderHeight);
+    window.addEventListener('resize', updateHeaderHeight);
+  </script>
+</body>
+</html>
